@@ -8,6 +8,7 @@ interface State {
   mechanism: Mechanism;
 }
 
-export const useMechanism = create<State>(() => ({
-  mechanism: initial
+export const useMechanism = create<State>((set) => ({
+  mechanism: initial,
+  setMechanism: (mech: Mechanism) => set({ mechanism: mech })
 }));
